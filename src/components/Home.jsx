@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
+import SvgFontIcons from 'react-svg-font-icons';
 import { Grid, Column } from './Grid';
 import MusicBg from '../../assets/music-bg.jpeg';
 import MusicList from './MusicList';
@@ -68,8 +69,8 @@ class Home extends Component {
                 <Column columns="3" key={song.id}>
                   <MusicList image={song.album.cover_medium ? song.artist.picture_medium:''}>
                     <h3><Link to={`/song/${song.id}`}>{song.artist.name}</Link></h3>
-                    <h4>{song.album.title}</h4>
-                    <h5>{song.title}</h5>
+                    <i className="fa fa-music">Album:{song.album.title}</i> <br />
+                    <i className="fa fa-music">Track:{song.title}</i>
                   </MusicList>                           
                 </Column>
               )) }

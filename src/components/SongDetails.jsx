@@ -1,20 +1,38 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import SvgFontIcons from 'react-svg-font-icons';
 import Footer from './Footer';
 import { Grid, Column } from './Grid';
 import Container from './Container';
 import Header from './Header';
 
-const SinglePageStyle = styled.div`
+const SongDetailsStyle = styled.div`
   margin: 50px 0;
   section{
     padding-left: 40px;
   }
+  button{
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    background: var(--color-brand-1);
+    border:none;
+    border-radius: var(--border-radius);
+    color: white;
+    font: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+  }
   h1, h3{
     margin: 0 0 15px 0;
   }
-  h4, h5{
+  i{
+    color: black:
+  }
+  span{
     margin: 0 0 12px 0;
   }
   ul{
@@ -33,7 +51,7 @@ const SinglePageStyle = styled.div`
   }
 `;
 
-class SinglePage extends Component {
+class SongDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,9 +65,9 @@ class SinglePage extends Component {
     this.setState({ ready: 'loading' });
     axios({
       method: 'get',
-      url: 'https://api.deezer.com/chart/0/tracks&limit=60',
+      url: `https://api.deezer.com/track/${id}`,
       headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
-    }).then(({ data:{data}}) => {
+    }).then(({data}) => {
       console.log(data)
       this.setState({
         ready: 'loaded',
@@ -62,7 +80,7 @@ class SinglePage extends Component {
     return (
       <Fragment>
         <Header />
-        <SinglePageStyle>
+        <SongDetailsStyle>
           <Container>
             { ready === 'loading' ? (<h1>Loading content...</h1>) : '' }
             { ready === 'loaded' && (
@@ -72,35 +90,32 @@ class SinglePage extends Component {
                   </Column>
                   <Column columns="2">
                     <section>
-                      <h1>{song.title}</h1>
+                    <i className="fa fa-music" aria-hidden="true"></i>
+                      <h3>Track title:</h3>
+                      <i className="fa fa-music">{song.title}</i>
                     </section>
                   </Column>
                 </Grid>
                 <Grid>
                   <Column columns="2">
-                    <img src={song.artist.picture_medium} alt="album art" />
+                    <img src={song.album.cover_medium} alt="album art" />
                   </Column>
                   <Column columns="2">
                     <section>
-                      <h3>Song ID</h3>
-                      <ul>
-                        { song.id && song.id.map((song, index) => (
-                          <li key={index}>{song}</li>
-                        )) }
-                      </ul>
-                      <h3>Album Title</h3>
-                      <p>{song.album.title}</p>
+                      <h3>Album Title:</h3>
+                      <i className="fa fa-music">{song.album.title}</i>
                     </section>
+                    <button onClick={song.preview}>Preview</button>
                   </Column>
                 </Grid>
               </Fragment>
             ) }
           </Container>
-        </SinglePageStyle>
+        </SongDetailsStyle>
         <Footer />
       </Fragment>
     );
   }
 }
 
-export default SinglePage;
+export default SongDetails;

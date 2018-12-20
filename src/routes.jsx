@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
-import SinglePage from './components/SinglePage';
+import SongDetails from './components/SongDetails';
 import GlobalStyle from './components/GlobalStyle';
 
 const Routes = () => (
@@ -10,7 +10,7 @@ const Routes = () => (
       <GlobalStyle />
       <Switch>
         <Route exact path="/" component={Home}></Route>
-        <Route path="/song/:id" component={SinglePage}></Route>
+        <Route path="/song/:id" component={SongDetails}></Route>
       </Switch>
     </Fragment>
   </Router>

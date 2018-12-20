@@ -34,8 +34,8 @@ const MusicList = ({ children, image }) => (
   <MusicListStyle>
     <img src={image || 'http://placehold.it/200'} alt="Music track" />
     <div>
-      {children}
       <h5></h5>
+      {children}
     </div>
   </MusicListStyle>
 );

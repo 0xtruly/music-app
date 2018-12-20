@@ -19,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
   img{
     width: 100%;
   }
+  i{
+    color: #eee;
+    background: --color-brand-1;
+  }
 `;
 
 export default GlobalStyle;

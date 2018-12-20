@@ -1,0 +1,52 @@
+{
+  "name": "stutern-recipe-project",
+  "version": "1.0.0",
+  "description": "Recipe React App for SGA",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephrexme/stutern-recipe-project.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "recipe"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josephrexme/stutern-recipe-project/issues"
+  },
+  "homepage": "https://github.com/josephrexme/stutern-recipe-project#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.1.0",
+    "manifest": "^0.1.4",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-rating": "^1.6.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "register-service-worker": "^1.5.2",
+    "styled-components": "^4.1.2",
+    "webpack": "^4.26.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.1.5",
+    "babel-loader": "^8.0.4",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.5.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}

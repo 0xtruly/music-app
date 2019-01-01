@@ -1,7 +1,7 @@
 require('dotenv').config();
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-console.log(process.env.NODE_ENV);
+// console.log(process.env.NODE_ENV);
 const config = {
   mode: 'development',
   entry: ['./src/index.js'],
@@ -47,8 +47,8 @@ const config = {
     new HtmlWebpackPlugin({
       template: 'src/template.html',
       favicon: 'assets/favicon.ico',
-    }),
-    new webpack.EnvironmentPlugin(['NODE_ENV', 'API_KEY', 'HOST']),
+    })
+    // new webpack.EnvironmentPlugin(['NODE_ENV', 'API_KEY', 'HOST']),
   ],
 };
 

@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
+const SearchBy = {
+  option1: document.getElementById('album'),
+  option2: document.getElementById('artist'),
+  option3: document.getElementById('track')
+}
 
 const Formstyle = styled.form`
   margin-top:1.8em;
@@ -55,72 +60,156 @@ class Form extends Component {
   constructor() {
     super();
     this.state = {
-      // recipeName: '',
-      searchQuery: '',
-      // ratings: 0,
+      // state initialization
+
+      ready: '',
+      input: '',
+      // SearchBy: '',
+      // select: '',
+
+      Album: [],
+      // Artist: [],
+      // Track: [],
     };
-    // this.handleInputChange = this.handleImputChange.bind(this);
-    // this.onkeyPress = this.onkeyPress.bind(this);
-    // this.onSearch = this.onSearch.bind(this);
-    // this.createRecipe = this.createRecipe.bind(this);
-    // this.inputName = this.inputName.bind(this);
-    // this.inputRating = this.inputRating.bind(this);
+    this.addInput = this.addInput.bind(this);
+    this.search = this.search.bind(this);
+    // this.SearchBy = this.SearchBy.bind(this);
+    // this.searchByAlbum = this.searchByAlbum.bind(this);
+    // this.searchByArtist = this.searchByArtist.bind(this);
+    // this.searchByTracks = this.searchByTracks.bind(this);
+
   }
-  // handleInputChange(event) {
-  //   this.setState({
-  //     searchQuery: event.target.value,
-  //   })
-  // }
-  // onkeyPress(event) {
-  //   if (event.key = 'Enter'){
-  //     this.onSearch()
-  //   }
+  addInput(event) {
+    this.setState({
+      input: event.target.value,
+    })
+  }
+
+  SearchBy(event) {
+    this.setState({
+      select: event.target.id,
+    })
+  }
+ 
+  search(event) {
+    event.preventDefault();
+    const {input} = this.state;
+    this.setState({
+      ready: 'Loading',
+      input: '', 
+    });
+    axios({
+      method: 'get',
+      url: `https://api.deezer.com/search/${SearchBy}?q=${input}`,
+      headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
+    })
+    .then(({ data:{data} } ) =>{
+        console.log(data);
+        this.setState({
+          Album: data,
+          ready: 'Loaded',
+        })
+    })
+    .catch(err =>{
+      console.log(error);
+      this.setState({
+        ready: 'error'
+      })
+    })
+  }
+  //search by Album using axios
+
+  // searchByAlbum(event) {
+  //    event.preventDefault();
+  //    const {input} = this.state;
+  //    this.setState({
+  //      ready: 'Loading',
+  //      input: ''
+  //    });
+  //    axios({
+  //      method: 'get',
+  //      url: `https://api.deezer.com/search/album?q=${input}`,
+  //      headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
+  //    })
+  //    .then( ({ data:{data} }) =>{
+  //         console.log(data);
+  //         this.setState({
+  //           Album: data,
+  //           ready: 'Loaded',
+  //         })
+  //    })
+  //    .catch(err =>{
+  //      console.log(error);
+  //      this.setState({
+  //        ready: 'error'
+  //      })
+  //    })
   // }
 
-  // onSearch(){
-  //   const baseUrl = "https://api.deezer.com/search?"
-  //   const fetchUrl1 =`${baseUrl}artist/q=${this.state.searchQuery}`
-  //   const fetchUrl2 = `${baseUrl}album/q=${this.state.searchQuery}`
-  //   const fetchUrl3 = `${baseUrl}track/q=${this.state.searchQuery}`
-  // }
-  // createRecipe(event) {
+  //search by Artist 
+  // searchByArtist(event) {
   //   event.preventDefault();
-  //   axios({
-  //     method: 'post',
-  //     url: `${process.env.HOST}/Cuisines`,
-  //     headers: { Authorization: `Bearer ${process.env.API_KEY}` },
-  //     data: {
-  //       fields: {
-  //         Name: this.state.recipeName,
-  //         Rating: Number(this.state.ratings),
-  //       }
-  //     }
-  //   }).then(response => {
-  //     console.log(response);
-  //   }).catch(error => {
-  //     console.log(error);
-  //   });
-  // }
-  // inputName(event) {
+  //   const {input} = this.state;
   //   this.setState({
-  //     recipeName: event.target.value,
+  //     ready: 'Loading',
+  //     input: ''
+  //   });
+  //   axios({
+  //     method: 'get',
+  //      url: `https://api.deezer.com/search/artist?q=${input}`,
+  //      headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
+  //   })
+  //   .then( ({ data:{data} }) =>{
+  //        console.log(data);
+  //        this.setState({
+  //          Artist: data,
+  //          ready: 'Loaded',
+  //        })
+  //   })
+  //   .catch(err =>{
+  //     console.log(error);
+  //     this.setState({
+  //       ready: 'error'
+  //     })
   //   })
   // }
-  // inputRating(event) {
+
+  // //search by Tracks
+  // searchByTracks(event) {
+  //   event.preventDefault();
+  //   const {input} = this.state;
   //   this.setState({
-  //     ratings: event.target.value,
+  //     ready: 'Loading',
+  //     input: ''
+  //   });
+  //   axios({
+  //     method: 'get',
+  //      url: `https://api.deezer.com/search/track?q=${input}`,
+  //      headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
+  //   })
+  //   .then( ({ data:{data} }) =>{
+  //     console.log(data);
+  //     this.setState({
+  //       Track: data,
+  //       ready: 'Loaded',
+  //     })
+  //   })
+  //   .catch(err =>{
+  //     console.log(error);
+  //     this.setState({
+  //       ready: 'error'
+  //     })
   //   })
   // }
   render() {
     return (
-      <Formstyle onSubmit={this.createRecipe}>
-        <input onChange={this.inputName} type="text" name="search" placeholder="search tracks, artist..." />
-             <select name="category" placeholder="category">
-               
-               <option>artist</option>
-               <option>album</option>
-               <option>tracks</option>
-             </select>
+      <Formstyle onSubmit={this.search}>
+        <input onChange={this.addInput} type="text" name="search" placeholder="search tracks, artist..." />
+             <select name="category" placeholder="category" onSelect={this.SearchBy} key={SearchBy.id}>
+               <option value="option1" id="album">album</option>
+               <option value="option2" id="artist">artist</option>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+               <option value="option3" id="track">track</option>
+             </select > 
           <button type="submit">Search</button>
       </Formstyle>
     );

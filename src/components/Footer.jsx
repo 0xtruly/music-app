@@ -10,7 +10,7 @@ const FooterStyle = styled.footer`
 
 const Footer = () => (
   <FooterStyle>
-    <p>&copy; 2018. Soundio Powered by Deezer</p>
+    <p>&copy; 2018. Soundio By Segun Abebanjo. Powered by Deezer</p>
   </FooterStyle>
 );
 

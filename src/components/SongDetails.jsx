@@ -105,7 +105,8 @@ class SongDetails extends Component {
                       <h3>Album Title:</h3>
                       <i className="fa fa-music">{song.album.title}</i>
                     </section>
-                    <button onClick={song.preview}>Preview</button>
+                    <input type="button" onClick={song.preview}>Preview</input>
+                    {/* <button onClick ={song.preview}>Preview</button> */}
                   </Column>
                 </Grid>
               </Fragment>

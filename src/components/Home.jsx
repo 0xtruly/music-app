@@ -38,11 +38,13 @@ class Home extends Component {
     this.setState({
       ready: 'loading',
     });
-    axios({
-      method: 'get',
-      url: 'https://api.deezer.com/chart/0/tracks&limit=60',
-      headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
-    })
+    // axios({
+    //   mode: 'no-cors',	    
+    //   method: 'get',	    
+    //   url: 'https://api.deezer.com/chart/0/tracks&limit=60',
+    //   headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
+    // })
+    axios.get('https://api.deezer.com/chart/0/tracks&limit=60')
     .then(({ data:{data} } ) => {
       console.log(data)
       this.setState({                                                                                                                                                                                                                               
@@ -63,7 +65,7 @@ class Home extends Component {
         <main>
           <Container>
             <Grid>
-              { song.length ? '' : 'There are no sound clips '  }
+              { song.length ? '' : 'If there are no sound clips, try refreshing your browser. '  }
               { ready === 'loading' ? 'Loading...' : '' }
               { song.map(song => (
                 <Column columns="3" key={song.id}>

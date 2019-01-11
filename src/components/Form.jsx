@@ -67,6 +67,7 @@ class Form extends Component {
     this.addInput = this.addInput.bind(this);
     this.search = this.search.bind(this);
     this.SearchBy = this.SearchBy.bind(this);
+    // this.clearResult = this.clearResult.bind(this);
   }
   addInput(event) {
     this.setState({
@@ -75,11 +76,21 @@ class Form extends Component {
   }
 
   SearchBy(event) {
-       const select = {
+      const select = {
         album : document.getElementById('album').getAttribute('value'),
         artist : document.getElementById('artist').getAttribute('value'),
         track : document.getElementById('track').getAttribute('value')
-       }
+       };
+      //  (options) => {
+      //     for(var i = 0; i<=select[key].length; i++){
+      //       if(i=select[0]){
+      //         event.target.value = 'album';
+      //       }else if(i=select[1]){
+      //         event.target.value = 'artist';
+      //       }else(event.target.value= 'track');
+      //     }
+      //  };       
+   
     this.setState({
       select: event.target.value,
     })
@@ -87,24 +98,30 @@ class Form extends Component {
  
   search(event) {
     event.preventDefault();
-    const {input} = this.state;
-    const {select} = this.state;
+    const {input, select} = this.state;
+    // const {select} = this.state;
     this.setState({
-      ready: 'Loading',
+      ready: 'loading',
       input: '',
       select: '', 
     });
-    axios({
-      method: 'get',
-      url: `https://api.deezer.com/search/${select}?q=${input}`,
-      headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
-    })
+    
+    // axios({
+    //   mode: 'no-cors',	    
+    //   method: 'get',
+    //   url: `https://api.deezer.com/search/${select}?q=${input}`,
+    //   headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
+    // })
+    axios.get(`https://api.deezer.com/search/${select}?q=${input}`)
     .then(({ data:{data} } ) =>{
+      const {select} = this.state;
         console.log(data);
         this.setState({
+          ready: 'loaded',
           song: data,
-          ready: 'Loaded',
+          select: '',
         })
+        
     })
     .catch(err =>{
       console.log(error);
@@ -114,7 +131,6 @@ class Form extends Component {
     })
   }
   render() {
-    // const{select}= this.state;
     return (
       <Formstyle onSubmit={this.search}>
       <input onChange={this.addInput} type="text" name="search" placeholder="search tracks, artist..." />

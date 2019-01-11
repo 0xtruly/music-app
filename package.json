@@ -8,6 +8,7 @@
     "build": "webpack",
     "test": "jest"
   },
+  "proxy": "https://api.deezer.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/josephrexme/stutern-recipe-project.git"

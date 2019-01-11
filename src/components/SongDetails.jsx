@@ -76,7 +76,7 @@ class SongDetails extends Component {
     });
   }
   render() {
-    const { song, ready } = this.state;
+    const { song, ready, } = this.state;
     return (
       <Fragment>
         <Header />
@@ -105,8 +105,7 @@ class SongDetails extends Component {
                       <h3>Album Title:</h3>
                       <i className="fa fa-music">{song.album.title}</i>
                     </section>
-                    <input type="button" onClick={song.preview}>Preview</input>
-                    {/* <button onClick ={song.preview}>Preview</button> */}
+                    <a href={song.preview} target="_blank">Peview</a>
                   </Column>
                 </Grid>
               </Fragment>

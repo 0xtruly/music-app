@@ -44,7 +44,7 @@ class Home extends Component {
     //   url: 'https://api.deezer.com/chart/0/tracks&limit=60',
     //   headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
     // })
-    axios.get('https://api.deezer.com/chart/0/tracks&limit=60')
+    axios.get('http://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks&limit=60')
     .then(({ data:{data} } ) => {
       console.log(data)
       this.setState({                                                                                                                                                                                                                               

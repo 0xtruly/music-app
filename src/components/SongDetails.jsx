@@ -65,7 +65,7 @@ class SongDetails extends Component {
     this.setState({ ready: 'loading' });
     axios({
       method: 'get',
-      url: `https://api.deezer.com/track/${id}`,
+      url: `http://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}`,
       headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
     }).then(({data}) => {
       console.log(data)

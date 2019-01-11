@@ -106,13 +106,13 @@ class Form extends Component {
       select: '', 
     });
     
-    // axios({
-    //   mode: 'no-cors',	    
-    //   method: 'get',
-    //   url: `https://api.deezer.com/search/${select}?q=${input}`,
-    //   headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
-    // })
-    axios.get(`https://api.deezer.com/search/${select}?q=${input}`)
+    axios({
+      mode: 'no-cors',	    
+      method: 'get',
+      url: `http://cors-anywhere.herokuapp.com/https://api.deezer.com/search/${select}?q=${input}`,
+      headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`}
+    })
+    // axios.get(`https://api.deezer.com/search/${select}?q=${input}`)
     .then(({ data:{data} } ) =>{
       const {select} = this.state;
         console.log(data);

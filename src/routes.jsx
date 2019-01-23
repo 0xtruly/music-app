@@ -10,8 +10,8 @@ const Routes = () => (
     <Fragment>
       <GlobalStyle />
       <Switch>
-        <Route exact path="/" component={Home}></Route>
-        <Route path="/main" component={Main}></Route>
+        <Route exact path="/" component={Main}></Route>
+        <Route path="/home" component={Home}></Route>
         <Route path="/song/:id" component={SongDetails}></Route>
       </Switch>
     </Fragment>

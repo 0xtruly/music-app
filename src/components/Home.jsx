@@ -94,8 +94,8 @@ class Home extends Component {
                <div className="section1" id="sec1">
                    <img src="../../assets/logo.svg" />
                    <h3>soundio</h3>
-                   <p>the music hub</p>
-
+                   <p className="sec1-par">the music hub</p>
+                   <button type="button" className="btn"></button>
                </div>         
                <div className="section2" id="">
                

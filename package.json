@@ -1,7 +1,7 @@
 {
   "name": "stutern-recipe-project",
   "version": "1.0.0",
-  "description": "Recipe React App for SGA",
+  "description": "Music App",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -28,6 +28,7 @@
     "axios": "^0.18.0",
     "dotenv": "^6.1.0",
     "manifest": "^0.1.4",
+    "oauth": "^0.9.15",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-rating": "^1.6.1",
@@ -36,8 +37,7 @@
     "react-select-search": "^0.9.3",
     "react-svg-font-icons": "^0.2.0",
     "register-service-worker": "^1.5.2",
-    "styled-components": "^4.1.2",
-    "webpack": "^4.26.1"
+    "styled-components": "^4.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -46,10 +46,16 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.1.5",
     "babel-loader": "^8.0.4",
+    "css-loader": "^2.1.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
-    "image-webpack-loader": "^4.5.0",
+    "image-webpack-loader": "^4.6.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "svg-inline-loader": "^0.8.0",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.28.4",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": "^3.1.14"
   }
 }

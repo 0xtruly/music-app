@@ -2,29 +2,60 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
-import SvgFontIcons from 'react-svg-font-icons';
-import { Grid, Column } from './Grid';
-import MusicBg from '../../assets/music-bg.jpeg';
-import MusicList from './MusicList';
+import { Wrapper, Box2 } from './Grid';
 import Footer from './Footer';
 import Container from './Container';
-import Form from './Form';
+// import one from '../../assets/one.jpg';
+// import two from '../../assets/2Aside.jpg';
+// import three from '../../assets/three.jpg';
+// import four from '../../assets/4Aside.jpg';
+
+
 const HomeStyle = styled.div`
-  header, footer{
-    text-align: center;
-  }
-  main{
-    margin: 20px 0;
-  }
+header, footer{
+   text-align: center;
+ }
+ main{
+  overflow: auto;
+  padding-bottom: 100px;
+}
+.wrapper{
+   display: grid;
+}
+.section1 .section2 .section3 .section4{
+   background-color: #fff;
+   
+}  
+.section1{
+   background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .6), url("../../assets/one.svg") no-repeat;
+   color: #fff;
+   height: 720px;
+   width: 100%;
+   background-size: cover;
+   background-position: center;
+   img{
+       width: 65px;
+       left: 100%;
+       margin-left: 740px;
+       top: 100%;
+       margin-top: 235px;
+    }
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+ 
+.section2 img{
+   width: 620px;
+   height: 500px;
+}
 `;
 
-const Header = styled.header`
-  padding: 70px 20px;
-  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(${MusicBg});
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-`;
+// const Header = styled.div`
+//   padding: 70px 20px;
+//   background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(${MusicBg});
+//   background-size: cover;
+//   background-position: center;
+//   color: #fff;
+//   }
+// `;
 
 class Home extends Component {
   constructor() {
@@ -38,13 +69,13 @@ class Home extends Component {
     this.setState({
       ready: 'loading',
     });
-    // axios({
-    //   mode: 'no-cors',	    
-    //   method: 'get',	    
-    //   url: 'https://api.deezer.com/chart/0/tracks&limit=60',
-    //   headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
-    // })
-    axios.get('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks&limit=60')
+    axios({
+      mode: 'cors',	    
+      method: 'get',	    
+      url: 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks&limit=60',
+      headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
+    })
+    // axios.get('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks&limit=60')
     .then(({ data:{data} } ) => {
       console.log(data)
       this.setState({                                                                                                                                                                                                                               
@@ -57,26 +88,31 @@ class Home extends Component {
     const { song, ready } = this.state;
     return (
       <HomeStyle>
-        <Header>
-          <h1>Soundio</h1>
-          <p>The Music Hub</p>
-          <Form />
-        </Header>
         <main>
           <Container>
-            <Grid>
-              { song.length ? '' : 'If there are no sound clips, try refreshing your browser. '  }
-              { ready === 'loading' ? 'Loading...' : '' }
-              { song.map(song => (
-                <Column columns="3" key={song.id}>
-                  <MusicList image={song.album.cover_medium ? song.artist.picture_medium:''}>
-                    <h3><Link to={`/song/${song.id}`}>{song.artist.name}</Link></h3>
-                    <i className="fa fa-music">Album:{song.album.title}</i> <br />
-                    <i className="fa fa-music">Track:{song.title}</i>
-                  </MusicList>                           
-                </Column>
-              )) }
-            </Grid>
+            <div className="wrapper">
+               <div className="section1" id="sec1">
+                   <img src="../../assets/logo.svg" />
+                   <h3>soundio</h3>
+                   <p>the music hub</p>
+
+               </div>         
+               <div className="section2" id="">
+               
+                 
+               
+               </div>
+               <div className="section3">
+               
+                  
+               
+               </div>
+               <div className="section4">
+               
+                  
+               
+               </div>         
+            </div>
           </Container>
         </main>
         <Footer />

@@ -1,44 +1,54 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 
 const Formstyle = styled.form`
-  margin-top:1.8em;
-  input{
-    height: 40px;
+margin-bottom: 3.8em;
+bottom: 100%;
+
+.header__label{
+    position: relative;
+    width: 31rem;
+    height: 4rem;
+}
+.label{
+  font-weight: 350px;!important
+  color: var(--color-brand-1);
+}
+ .header__search{
+    width: 516px;
+    height: 38px;
+    margin-top: 2rem;
+    padding: 0 4rem 0 1.4rem;
+    border: solid thin #eee;
+    border-radius: 5px;
+    ::placeholder{
+      color: var(--color-brand-1);
+      font-size: 16px;
+      font-style: var(--font-brand-1);
+      font-weight: 100;
+    }
+ }
+ .header__btn {
+  position: absolute;
+  top: 0rem;
+  right: 1rem;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 0;
+  color: var(--color-brand-1);
+  cursor: pointer;
+  svg{
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: var(--color-brand-1);
+  }
    
-    border: 0;
-    border-radius: var(--border-radius);
-    font: inherit;
-    padding: 10px;
-    width: 100%;
-  }
-  button{
-    display: inline-block;
-    width: 100%;
-    height: 40px;
-    margin: 10px 0;
-    background: var(--color-brand-1);
-    border:none;
-    border-radius: var(--border-radius);
-    color: white;
-    font: inherit;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-  }
-  select{
-    display: inline-block;
-    width: 100px;
-    border: none;
-    padding: 8px;
-    font-size:14px;
-    font: inherit;
-    color: white;
-    background: var(--color-brand-1);
-    border-radius: var(--border-radius);
-  }
+ }
+
   @media(min-width: 720px) {
     input{
       width: 200px;
@@ -56,17 +66,17 @@ class Form extends Component {
     super();
     this.state = {
       // state initialization
-      clickEvent: '',
+      // clickEvent: '',
       ready: '',
       input: '',
-      SearchBy: '',
-      select: '',
+      // SearchBy: '',
+      // select: '',
       song: [],
    
     };
     this.addInput = this.addInput.bind(this);
     this.search = this.search.bind(this);
-    this.SearchBy = this.SearchBy.bind(this);
+    // this.SearchBy = this.SearchBy.bind(this);
     // this.clearResult = this.clearResult.bind(this);
   }
   addInput(event) {
@@ -75,41 +85,26 @@ class Form extends Component {
     })
   }
 
-  SearchBy(event) {
-      const select = {
-        album : document.getElementById('album').getAttribute('value'),
-        artist : document.getElementById('artist').getAttribute('value'),
-        track : document.getElementById('track').getAttribute('value')
-       };
-      //  (options) => {
-      //     for(var i = 0; i<=select[key].length; i++){
-      //       if(i=select[0]){
-      //         event.target.value = 'album';
-      //       }else if(i=select[1]){
-      //         event.target.value = 'artist';
-      //       }else(event.target.value= 'track');
-      //     }
-      //  };       
-   
-    this.setState({
-      select: event.target.value,
-    })
-  }
+  // SearchBy(event) {
+  //   this.setState({
+  //     select: event.target.value,
+  //   })
+  // }
  
   search(event) {
     event.preventDefault();
-    const {input, select} = this.state;
+    const {input} = this.state;
     // const {select} = this.state;
     this.setState({
       ready: 'loading',
       input: '',
-      select: '', 
+      // select: '', 
     });
     
     axios({
-      mode: 'no-cors',	    
+      mode: 'cors',	    
       method: 'get',
-      url: `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/${select}?q=${input}`,
+      url: `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${input}`,
       headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`}
     })
     // axios.get(`https://api.deezer.com/search/${select}?q=${input}`)
@@ -119,7 +114,7 @@ class Form extends Component {
         this.setState({
           ready: 'loaded',
           song: data,
-          select: '',
+          // select: '',
         })
         
     })
@@ -131,18 +126,20 @@ class Form extends Component {
     })
   }
   render() {
+    const {song} = this.state;
     return (
       <Formstyle onSubmit={this.search}>
-      <input onChange={this.addInput} type="text" name="search" placeholder="search tracks, artist..." />
-      
-          <select id='selected' name="category" placeholder="category" onChange={this.SearchBy}>
-            <option value="album" id="album">album</option>
-            <option value="artist" id="artist">artist</option>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-            <option value="track" id="track">track</option>
-          </select > 
-     
-       <button type="submit">Search</button>
+
+        <label for="search" className="header__label">
+          <input onChange={this.addInput} type="search" id="searchInput" className="header__search" placeholder="Search" />
+            <button className="header__btn">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2.3 20.3L6 16.6c-1.2-1.5-2-3.5-2-5.6 0-5 4-9 9-9s9 4 9 9-4 9-9 9c-2.1 0-4.1-.7-5.6-2l-3.7 3.7c-.2.2-.5.3-.7.3-.2 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4zM20 11c0-3.9-3.1-7-7-7s-7 3.1-7 7c0 1.9.8 3.7 2 4.9 1.3 1.3 3 2 4.9 2 4 .1 7.1-3 7.1-6.9z" fill-rule="nonzero" /></svg>
+            </button>
+        </label>
+
       </Formstyle>
+      
+      //  <button type="submit"><Link to={`/song/`}>Search</Link></button>
     );
   }
 } 

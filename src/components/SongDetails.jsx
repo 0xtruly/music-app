@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import axios from 'axios';
 import SvgFontIcons from 'react-svg-font-icons';
 import Footer from './Footer';
-import { Grid, Column } from './Grid';
+import { Wrapper, Box2 } from './Grid';
 import Container from './Container';
 import Header from './Header';
+import Loader from './Loader';
 
 const SongDetailsStyle = styled.div`
   margin: 50px 0;
@@ -79,35 +80,36 @@ class SongDetails extends Component {
     const { song, ready, } = this.state;
     return (
       <Fragment>
-        <Header />
+        <Header>
+        </Header>
         <SongDetailsStyle>
           <Container>
-            { ready === 'loading' ? (<h1>Loading content...</h1>) : '' }
+            { ready === 'loading' ?  <Loader /> : '' }
             { ready === 'loaded' && (
               <Fragment>
-                <Grid>
-                  <Column columns="2">
-                  </Column>
-                  <Column columns="2">
+                <Wrapper>
+                  <Box2 Box2s="2">
+                  </Box2>
+                  <Box2 Box2s="2">
                     <section>
                     <i className="fa fa-music" aria-hidden="true"></i>
                       <h3>Track title:</h3>
                       <i className="fa fa-music">{song.title}</i>
                     </section>
-                  </Column>
-                </Grid>
-                <Grid>
-                  <Column columns="2">
+                  </Box2>
+                </Wrapper>
+                <Wrapper>
+                  <Box2 Box2s="2">
                     <img src={song.album.cover_medium} alt="album art" />
-                  </Column>
-                  <Column columns="2">
+                  </Box2>
+                  <Box2 Box2s="2">
                     <section>
                       <h3>Album Title:</h3>
                       <i className="fa fa-music">{song.album.title}</i>
                     </section>
                     <a href={song.preview} target="_blank">Peview</a>
-                  </Column>
-                </Grid>
+                  </Box2>
+                </Wrapper>
               </Fragment>
             ) }
           </Container>

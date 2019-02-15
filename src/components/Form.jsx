@@ -7,7 +7,16 @@ import {Link} from 'react-router-dom';
 const Formstyle = styled.form`
 margin-bottom: 3.8em;
 bottom: 100%;
-
+@media (max-width: 425px){
+   top: 100%
+   margin-top: -82px;
+}
+input #searchInput{
+  @media(max-width:425px){
+    position: relative;
+    margin-left: 250px;
+  }
+}
 .header__label{
     position: relative;
     width: 31rem;
@@ -18,17 +27,26 @@ bottom: 100%;
   color: var(--color-brand-1);
 }
  .header__search{
-    width: 516px;
+    width: 500px;
     height: 38px;
     margin-top: 2rem;
     padding: 0 4rem 0 1.4rem;
     border: solid thin #eee;
     border-radius: 5px;
+    @media (max-width: 425px){
+      position: relative;
+      margin-left: 58%;
+      width: 144px;
+    }
     ::placeholder{
       color: var(--color-brand-1);
       font-size: 16px;
       font-style: var(--font-brand-1);
       font-weight: 100;
+      @media(max-width: 425px){
+         font-size: 13px;
+         font-weight: 100;
+      }
     }
  }
  .header__btn {
@@ -45,6 +63,9 @@ bottom: 100%;
     width: 1.1rem;
     height: 1.1rem;
     fill: var(--color-brand-1);
+     @media(max-width: 425px){
+        width: 0.8rem;
+     }
   }
    
  }

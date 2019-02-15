@@ -29,6 +29,7 @@
     "dotenv": "^6.1.0",
     "manifest": "^0.1.4",
     "oauth": "^0.9.15",
+    "passport-deezer": "^0.2.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-rating": "^1.6.1",

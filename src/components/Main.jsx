@@ -23,11 +23,23 @@ const MainStyle = styled.div`
 `;
 
 const Header = styled.div`
-  padding: 70px 20px;
+  padding:20px 5px;
   background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(${MusicBg});
   background-size: cover;
   background-position: center;
   color: #fff;
+  @media (max-width: 425px){
+     grid-column: 1/span 3;
+     grid-row: 1/span 2;
+}
+ 
+  @media (min-width: 768px){
+     padding: 50px 20px;
+  }
+  @media (min-width: 1024px){
+   padding: 70px 20px;
+}
+
   }
 `;
 
@@ -72,8 +84,8 @@ class Main extends Component {
                   <h5><p>The Music Hub</p></h5>
                 </Header>
                 <div className="upperNav">
-                   <h4>home</h4>
-                   <h4>Explore</h4>
+                   <h4 className="home">home</h4>
+                   <h4 className="explore">Explore</h4>
                 </div>
                 <div className="lowerNav">
                   <h4>my music</h4>

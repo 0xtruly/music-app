@@ -5,7 +5,7 @@ import axios from 'axios';
 import SvgFontIcons from 'react-svg-font-icons';
 import { Wrapper, Box1, Box2 } from './Grid';
 import MusicBg from '../../assets/music-bg.jpeg';
-import one from '../../assets/one.jpg';
+// import one from '../../assets/one.jpg';
 import MusicContent from './MusicContent';
 import Footer from './Footer';
 import Container from './Container';
@@ -79,7 +79,7 @@ class Main extends Component {
             <Wrapper>
             <div className="left">
                 <Header>
-                  <img src="../../assets/logo.svg" />
+                  <img src="../../assets/logo.png" />
                   <h3>Soundio</h3>
                   <h5><p>The Music Hub</p></h5>
                 </Header>
@@ -91,19 +91,19 @@ class Main extends Component {
                   <h4>my music</h4>
                   <ul>
                     <li>
-                      <img src="../../assets/album.svg" /><p><a href="#">Album</a></p>
+                      <img src="../../assets/album.png" /><p><a href="#">Album</a></p>
                     </li>
                     <li>
-                      <img src="../../assets/artist.svg" /><p><a href="#">Artist</a></p>
+                      <img src="../../assets/artist.png" /><p><a href="#">Artist</a></p>
                     </li>
                     <li>
-                      <img src="../../assets/track.svg" /><p><a href="#">Track</a></p>
+                      <img src="../../assets/track.png" /><p><a href="#">Track</a></p>
                     </li>
                     <li>
-                      <img src="../../assets/favourite.svg" /><p><a href="#">Favourite</a></p>
+                      <img src="../../assets/favourite.png" /><p><a href="#">Favourite</a></p>
                     </li>
                     <li>
-                      <img src="../../assets/playlists.svg" /><p><a href="#">Playlist</a></p>
+                      <img src="../../assets/playlists.png" /><p><a href="#">Playlist</a></p>
                     </li>
                   </ul>
                 </div>

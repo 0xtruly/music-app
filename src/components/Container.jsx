@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 // import one from '../../assets/one.svg';
-import two from '../../assets/2Aside.jpg';
-import three from '../../assets/three.jpg';
-import four from '../../assets/4Aside.jpg';
+// import two from '../../assets/2Aside.jpg';
+// import three from '../../assets/three.jpg';
+// import four from '../../assets/4Aside.jpg';
 
 
 const Container = styled.div`

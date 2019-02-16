@@ -44,7 +44,7 @@ export const Wrapper = styled.div`
     left: 100%;
     margin-left: 38px;
     bottom: 100%;
-    margin-bottom: -62px;
+    margin-bottom: -84px;
   }
   .left .upperNav h4{
     font-style: var(--font-brand-1);

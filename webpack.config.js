@@ -33,8 +33,12 @@ const config = {
                 quality: 80,
               },
               optipng: {
-                optimizationLevel: 7,
-              }
+                enabled: false,
+              },
+              pngquant:{
+                 quality: '65-90',
+                 speed: 4,
+              },
             }
           }
         ]

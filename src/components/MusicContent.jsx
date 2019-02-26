@@ -24,6 +24,9 @@ const MusicContentStyle = styled.div`
       height:270px;
    }
   }
+  img:hover{
+     opacity: .5;
+  }
 
   div{
     padding: 0px 10px;

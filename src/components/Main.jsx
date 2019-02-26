@@ -67,9 +67,9 @@ class Main extends Component {
             <Wrapper>
             <div className="left">
                 <Header>
-                  <img src="../../assets/logo.svg" />
+                  <img src={Logo} />
                   <h3>Soundio</h3>
-                  <h5><p>The Music Hub</p></h5>
+                  <h5><p>Mp3 Tone Downloads </p></h5>
                 </Header>
                 <div className="upperNav">
                    <h4>home</h4>
@@ -104,9 +104,10 @@ class Main extends Component {
               <Box2>
               {song.map(song => (
                   <MusicContent key={song.id} image={song.album.cover_medium ? song.artist.picture_medium : ''}>
-                    {/* <h3><Link to={`/song/${song.id}`}>{song.artist.name}</Link></h3> */}
-                    <h3 className="fa fa-music">{song.title}</h3>
+                    <h3 className="artist-name">{song.artist.name}</h3>
+                    <h3 className="title">{song.title}</h3>
                     <ReactAudioPlayer
+                       className="react-audio-player"
                        src={song.preview}
                        controls
                     />

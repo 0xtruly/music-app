@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import Rating from 'react-rating';
 
 const MusicContentStyle = styled.div`
 
@@ -26,6 +25,10 @@ const MusicContentStyle = styled.div`
   }
   img:hover{
      opacity: .5;
+<<<<<<< HEAD
+=======
+     cursor: pointer;
+>>>>>>> onhover for image card
   }
 
   div{

@@ -31,6 +31,7 @@
     "oauth": "^0.9.15",
     "passport-deezer": "^0.2.0",
     "react": "^16.6.3",
+    "react-audio-player": "^0.11.0",
     "react-dom": "^16.6.3",
     "react-rating": "^1.6.1",
     "react-router": "^4.3.1",
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",

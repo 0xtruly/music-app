@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     --color-brand-1: #FF0073;
     --color-brand-2: #2D2D2D;
     --color-brand-3: #3D3D3D;
+    --color-brand-4: #3d3d3d;    
     --border-radius: 0.4em;
     --font-brand-1: 'Open Sans', Regular;
     --font-brand-2: 'Sans Serif Plus 7', Regular;

@@ -37,13 +37,40 @@ const MusicContentStyle = styled.div`
   h3{
     margin: 8px -8px;
     font-weight: 300;
-    font-size: 18px;
     a:hover{
        text-decoration: underline;
     }
     @media (max-width: 425px){
-      font-size: 14px;
+      font-size: 13px;
   }
+  }
+  .artist-name{
+     font-size: 16px;
+     color: var(--color-brand-1);
+  }
+  .title{
+     font-size: 13px;
+     color: var(--color-brand-4);
+  }
+  .react-audio-player{
+     width: 100%;
+     height: 40px;
+     margin-top: -190px;
+     margin-left: 0px;
+     top: 100%;
+     display: block;
+     opacity: 0;
+     position: relative;
+     @media (max-width: 425px){
+      height: 30px;
+      margin-left: 1px;
+      margin-top: -155px;
+      -webkit-text-fill-color: crimson;
+     }
+  }
+  .react-audio-player:hover{
+     cursor: pointer;
+     opacity: 1;
   }
   
   a{
@@ -55,7 +82,6 @@ const MusicContent = ({ children, image }) => (
   <MusicContentStyle>
     <img src={image || 'http://placehold.it/200'} alt="Music track" />
     <div>
-      <h5></h5>
       {children}
     </div>
   </MusicContentStyle>

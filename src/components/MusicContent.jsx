@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+// import Rating from 'react-rating';
 
 const MusicContentStyle = styled.div`
 
@@ -24,11 +25,8 @@ const MusicContentStyle = styled.div`
    }
   }
   img:hover{
-     opacity: .5;
-<<<<<<< HEAD
-=======
-     cursor: pointer;
->>>>>>> onhover for image card
+    opacity: .5;
+    cursor: pointer;
   }
 
   div{
@@ -67,11 +65,12 @@ const MusicContentStyle = styled.div`
      display: block;
      opacity: 0;
      position: relative;
+     -webkit-text-fill-color: crimson;
      @media (max-width: 425px){
       height: 30px;
       margin-left: 1px;
       margin-top: -155px;
-      -webkit-text-fill-color: crimson;
+      padding: 2px;
      }
   }
   .react-audio-player:hover{

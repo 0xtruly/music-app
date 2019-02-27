@@ -9,7 +9,7 @@ const MusicContentStyle = styled.div`
   color: var(--color-brand-1);
   overflow: hidden;
   @media (max-width: 425px){
-     height: 240px;
+     height: 250px;
  }
   
   img{

@@ -117,7 +117,7 @@ class Form extends Component {
     axios({
       mode: 'cors',	    
       method: 'get',
-      url: `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${input}`,
+      url: `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${input}/?etag=true`,
       headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`}
     })
    

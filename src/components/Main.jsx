@@ -72,11 +72,11 @@ class Main extends Component {
                   <h5><p>Mp3 Tone Downloads </p></h5>
                 </Header>
                 <div className="upperNav">
-                   <h4>home</h4>
-                   <h4>Explore</h4>
+                   <h4><Link to="/">Home</Link></h4>
+                   {/* <h4>Explore</h4> */}
                 </div>
                 <div className="lowerNav">
-                  <h4>my music</h4>
+                  {/* <h4>my music</h4>
                   <ul>
                     <li>
                       <img src={Album} /><p><a href="#">Album</a></p>
@@ -93,7 +93,7 @@ class Main extends Component {
                     <li>
                       <img src={Playlists} /><p><a href="#">Playlist</a></p>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
             </div>
             <div className="right">

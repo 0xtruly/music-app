@@ -142,6 +142,7 @@ export const Box2 = styled.div`
   @media(max-width: 425px){
    padding: 25px;
    margin: 0;
+   
  }
 @media (max-width: 768px){
    display: grid;

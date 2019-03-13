@@ -31,7 +31,7 @@ export class Provider extends Component {
       axios({
         mode: 'cors',	    
         method: 'get',	    
-        url: 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks&limit=24',
+        url: 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks&limit=24/?etag=true',
         headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`},
       })
       

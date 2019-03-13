@@ -67,10 +67,12 @@ const MusicContentStyle = styled.div`
      position: relative;
      -webkit-text-fill-color: crimson;
      @media (max-width: 425px){
-      height: 30px;
-      margin-left: 1px;
-      margin-top: -155px;
-      padding: 2px;
+      height: 25px;
+      margin-left: -10px;
+      margin-top: -150px;
+      padding: 0px;
+      width: 159px;
+      padding-right: 5px;
      }
   }
   .react-audio-player:hover{

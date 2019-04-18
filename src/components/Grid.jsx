@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
        display: grid;
        grid-template-columns: 140px 1fr 1fr;
        grid-template-rows: 25% 100px 65px;
+       height: 25vh;
     }
   }
   .right{

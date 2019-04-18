@@ -12,11 +12,16 @@ export const Wrapper = styled.div`
 }
   .left{
     border-right: solid thin #eee;
+    height: 100vh;
     @media (max-width: 425px){
        display: grid;
        grid-template-columns: 140px 1fr 1fr;
        grid-template-rows: 25% 100px 65px;
     }
+  }
+  .right{
+    height: 100vh;
+    overflow: auto;
   }
   .right p{
     font-style: var(--font-brand-1);

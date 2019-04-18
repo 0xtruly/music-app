@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Open Sans', Regular;
     font-size: 15px;
+    overflow: hidden;
   }
   a {
     text-decoration: none;

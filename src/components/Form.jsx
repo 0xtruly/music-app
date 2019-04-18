@@ -61,10 +61,12 @@ input #searchInput{
   border: 0;
   color: var(--color-brand-1);
   cursor: pointer;
+  outline: none;
   svg{
     width: 1.1rem;
     height: 1.1rem;
     fill: var(--color-brand-1);
+    outline: none;
      @media(max-width: 425px){
         width: 0.8rem;
      }

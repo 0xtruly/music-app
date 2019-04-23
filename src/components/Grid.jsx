@@ -17,12 +17,16 @@ export const Wrapper = styled.div`
        display: grid;
        grid-template-columns: 140px 1fr 1fr;
        grid-template-rows: 25% 100px 65px;
-       height: 25vh;
+       height: 17vh;
     }
   }
   .right{
     height: 100vh;
     overflow: auto;
+    @media (max-width: 425px){
+       height: 65vh;
+       overflow: visible;	    
+    }	  
   }
   .right p{
     font-style: var(--font-brand-1);

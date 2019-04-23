@@ -11,7 +11,7 @@ margin-bottom: 3.8em;
 bottom: 100%;
 @media (max-width: 425px){
    top: 100%
-   margin-top: -82px;
+   margin-top: 0px;
 }
 input #searchInput{
   @media(max-width:425px){

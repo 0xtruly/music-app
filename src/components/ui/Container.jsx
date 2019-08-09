@@ -1,8 +1,4 @@
 import styled from 'styled-components';
-// import one from '../../assets/one.svg';
-// import two from '../../assets/2Aside.jpg';
-// import three from '../../assets/three.jpg';
-// import four from '../../assets/4Aside.jpg';
 
 
 const Container = styled.div`
@@ -11,7 +7,6 @@ const Container = styled.div`
   .wrapper{
      display: grid;
    }
-
    .section1{
       background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)), url("../../assets/one.svg");
       background-size: cover;
@@ -56,9 +51,6 @@ const Container = styled.div`
     margin-top: -83px;
     font-size: 40px;
 }
-
-
-
 `;
 
 export default Container;

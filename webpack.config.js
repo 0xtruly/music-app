@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // console.log(process.env.NODE_ENV);
 const config = {
-  mode: 'development',
+  mode: 'production',
   entry: ['./src/index.js'],
   output: {
     filename: 'bundle.js',

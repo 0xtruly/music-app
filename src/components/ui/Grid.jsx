@@ -66,8 +66,6 @@ export const Wrapper = styled.div`
       font-size: 15px;
     }
   }
-  
-
   .left .lowerNav h4{
     font-style: var(--font-brand-1);
     font-size: 17px;
@@ -86,7 +84,6 @@ export const Wrapper = styled.div`
     margin-left: 90px;
     margin-top: -4px;
     p{
-
       font-size: 12px;
       font-weight: 10;
       font-style: var(--font-brand-1);
@@ -139,7 +136,6 @@ export const Box1 = styled.div`
   border-radius: 5px;
   padding: 20px;
   `;
-  
   
 export const Box2 = styled.div`
   display: grid;

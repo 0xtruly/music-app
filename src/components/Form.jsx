@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
-import MusicContent from './MusicContent';
 import {Consumer} from './Context';
 
 
@@ -70,10 +68,8 @@ input #searchInput{
      @media(max-width: 425px){
         width: 0.8rem;
      }
-  }
-   
+  } 
  }
-
   @media(min-width: 720px) {
     input{
       width: 200px;
@@ -99,7 +95,6 @@ class Form extends Component {
     };
     this.addInput = this.addInput.bind(this);
     this.search = this.search.bind(this);
-
   }
   addInput(event) {
     this.setState({
@@ -107,7 +102,6 @@ class Form extends Component {
     })
   }
 
- 
  
   search(dispatch,event) {
     event.preventDefault();
@@ -122,14 +116,11 @@ class Form extends Component {
       url: `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${input}`,
       headers: {Authorization: `Bearer e9d874c859b7133d36df9b5bcd38512d`}
     })
-   
     .then(({ data:{data} } ) =>{
-      
       dispatch({
          type: 'SEARCH',
          payload: data 
-      })
-        
+      })  
     })
     .catch(err =>{
       console.log(error);
@@ -137,14 +128,12 @@ class Form extends Component {
         ready: 'error'
       })
     })
-
   }
   render() {
      return(
         <Consumer>
            {value =>{
               const {dispatch} = value;
-              
               return (
                  <Formstyle onSubmit={this.search.bind(this, dispatch)}>
                  <label htmlFor="search" className="header__label">
@@ -159,7 +148,6 @@ class Form extends Component {
         </Consumer>
      )
   }
-} 
-
+}
 export default Form;
 

@@ -36,7 +36,6 @@ export class Provider extends Component {
       })
       
       .then(({ data:{data} } ) => {
-      
         this.setState({                                                                                                                                                                                                                               
           ready: 'loaded',
           song: data,
@@ -51,5 +50,4 @@ export class Provider extends Component {
       )
    }
 }
-
 export const Consumer = Context.Consumer;

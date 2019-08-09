@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import axios from 'axios';
-import SvgFontIcons from 'react-svg-font-icons';
-import { Wrapper, Box1, Box2 } from './Grid';
+import { Wrapper, Box1, Box2 } from './ui/Grid';
 import MusicBg from '../../assets/music-bg.jpeg';
-import Album from '../../assets/album.png';
-import Artist from '../../assets/artist.png';
-import Favourite from '../../assets/favourite.png';
-import Playlists from '../../assets/playlists.png';
-import Track from '../../assets/track.png';
 import Logo from '../../assets/logo.png';
-import MusicContent from './MusicContent';
-import Footer from './Footer';
-import Container from './Container';
+import MusicContent from './ui/MusicContent';
+import Container from './ui/Container';
 import Form from './Form';
-import Loader from './Loader';
+import Loader from './ui/Loader';
 import {Consumer} from './Context';
 import ReactAudioPlayer from 'react-audio-player';
 
@@ -39,27 +31,22 @@ const Header = styled.div`
      grid-column: 1/span 3;
      grid-row: 1/span 2;
 }
- 
   @media (min-width: 768px){
      padding: 50px 20px;
   }
   @media (min-width: 1024px){
    padding: 70px 20px;
 }
-
   }
 `;
 
 class Main extends Component {
 
-
   render() {
-   //  const { song, ready, heading } = this.state;
     return (
    <Consumer>
      {value =>{ 
         const {song, ready, heading} = value;
-        console.log(value)
      return(
      <MainStyle>
         <main>
@@ -73,27 +60,8 @@ class Main extends Component {
                 </Header>
                 <div className="upperNav">
                    <h4><Link to="/">Home</Link></h4>
-                   {/* <h4>Explore</h4> */}
                 </div>
                 <div className="lowerNav">
-                  {/* <h4>my music</h4>
-                  <ul>
-                    <li>
-                      <img src={Album} /><p><a href="#">Album</a></p>
-                    </li>
-                    <li>
-                      <img src={Artist} /><p><a href="#">Artist</a></p>
-                    </li>
-                    <li>
-                      <img src={Track} /><p><a href="#">Track</a></p>
-                    </li>
-                    <li>
-                      <img src={Favourite} /><p><a href="#">Favourite</a></p>
-                    </li>
-                    <li>
-                      <img src={Playlists} /><p><a href="#">Playlist</a></p>
-                    </li>
-                  </ul> */}
                 </div>
             </div>
             <div className="right">
@@ -125,6 +93,5 @@ class Main extends Component {
     );
   }
 } 
-
 export default Main;
 

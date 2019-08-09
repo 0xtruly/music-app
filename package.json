@@ -1,5 +1,5 @@
 {
-  "name": "stutern-recipe-project",
+  "name": "react-music-app",
   "version": "1.0.0",
   "description": "Music App",
   "main": "src/index.js",
@@ -16,7 +16,7 @@
   "keywords": [
     "react",
     "webpack",
-    "recipe"
+    "music"
   ],
   "author": "",
   "license": "ISC",

@@ -96,6 +96,7 @@ export const Wrapper = styled.div`
     @media(max-width: 425px){
        padding-left: 25px;
        border: none;
+       display: none;
     }
     .explore{
        @media(max-width: 425px){

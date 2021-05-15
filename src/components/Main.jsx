@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ReactAudioPlayer from "react-audio-player";
@@ -10,7 +10,6 @@ import Logo from "../../assets/logo.png";
 import MusicContent from "./ui/MusicContent";
 import Container from "./ui/Container";
 import Form from "./Form";
-import Loader from "./ui/Loader";
 import { Consumer } from "./Context";
 
 const MainStyle = styled.div`
@@ -91,9 +90,9 @@ class Main extends Component {
                                  <Header>
                                     <img src={Logo} />
                                     <h3>Soundio</h3>
-                                    <h5>
+                                    {/* <h5>
                                        <p>Mp3 Tone Downloads </p>
-                                    </h5>
+                                    </h5> */}
                                  </Header>
                                  <div className="upperNav">
                                     <h4>

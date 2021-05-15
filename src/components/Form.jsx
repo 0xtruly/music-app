@@ -9,6 +9,8 @@ const Formstyle = styled.form`
    @media (max-width: 425px) {
       top: 100%;
       margin-top: 0px;
+      margin-bottom: 0px;
+      padding: 0 4%;
    }
    input #searchInput {
       @media (max-width: 425px) {
@@ -34,8 +36,9 @@ const Formstyle = styled.form`
       border-radius: 5px;
       @media (max-width: 425px) {
          position: relative;
-         margin-left: 58%;
-         width: 144px;
+         /* margin-left: 58%; */
+         /* width: 144px; */
+         width: 100%;
       }
       ::placeholder {
          color: var(--color-brand-1);

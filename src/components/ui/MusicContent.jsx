@@ -20,34 +20,12 @@ const MusicContentStyle = styled.div`
       width: 100%;
       height: 239px;
       object-fit: cover;
+      box-shadow: 0 7px 14px -6px rgb(148 148 148 / 52%);
       @media (max-width: 425px) {
          height: 145px;
       }
       @media (min-width: 1440px) {
          height: 270px;
-      }
-      &:after {
-         position: absolute;
-         top: 0;
-         right: 0;
-         bottom: 0;
-         left: 0;
-         transform: translateX(-100%);
-         background-image: linear-gradient(
-            90deg,
-            rgba(#fff, 0) 0,
-            rgba(#fff, 0.2) 20%,
-            rgba(#fff, 0.5) 60%,
-            rgba(#fff, 0)
-         );
-         animation: ${shimmer} 2s infinite;
-         content: "";
-         width: 100%;
-         height: 239px;
-         /* visibility: ${(props) =>
-            props.skeleton ? "visible" : "hidden"}; */
-         /* visibility: ${(props) =>
-            props.skeleton ? "visible" : "hidden"}; */
       }
    }
    img:hover {
@@ -108,8 +86,8 @@ const MusicContentStyle = styled.div`
    }
 `;
 
-const MusicContent = ({ children, image, skeleton }) => (
-   <MusicContentStyle skeleton={skeleton}>
+const MusicContent = ({ children, image }) => (
+   <MusicContentStyle>
       <img src={image || "http://placehold.it/200"} alt="Music track" />
       <div>{children}</div>
    </MusicContentStyle>
